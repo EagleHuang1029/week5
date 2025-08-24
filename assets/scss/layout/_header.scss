@@ -1,3 +1,8 @@
+@mixin pad{
+  @media(max-width: 768px){
+	@content;
+  }
+}
 
 .ml-a{
     margin-left: auto;
@@ -14,6 +19,9 @@ header{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    @include pad{
+      justify-content: space-between;
+    }
   }
 
   .navbar{
@@ -32,6 +40,12 @@ header{
     }
   }
 
+  .logo{
+    @include pad{
+      width: 92px;
+    }
+  }
+
   .account{
     display: flex;
     justify-content: center;
@@ -46,3 +60,4 @@ header{
   }
   
 }
+

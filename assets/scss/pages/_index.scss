@@ -1,3 +1,9 @@
+@mixin pad{
+  @media(max-width: 768px){
+	@content;
+  }
+}
+
 img{
     display: block;
 }
@@ -16,14 +22,55 @@ img{
     padding-right: 20px;
 }
 
+.rounded-4-5{
+    border-radius: 24px !important;
+}
+
 .mw-815{
     max-width: 815px;
 }
 
+.banner-second-text{
+    text-align: left;
+    @include pad{
+        text-align:center;
+        margin-bottom: 16px;
+    }
+}
+
+.story-logo{
+    width: 96px;
+    @include pad{
+      width: 48px;
+    }
+}
+
 .story-bg{
-    background:linear-gradient(to top,$natural-95 25%,transparent 25%)
-;
-    
+    background:linear-gradient(to top,$natural-95 25%,transparent 25%);
+}
+
+.story-card{
+    max-width: 400px;
+}
+
+.card-tag{
+    left: 12px;
+    top: 12px;
+}
+
+.bs-gy-24-24{
+    --bs-gutter-y: clamp(24px , 0vw + 24px, 24px);
+}
+@media (min-width: 576px) {
+    .index-story-row{
+        margin-right: calc(-50vw + 50% + 24px);
+    }
+}
+
+.scroll{
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    flex-wrap: nowrap;
 }
 
 .choose-card{
@@ -35,6 +82,9 @@ img{
     height: 1px;
     width: 72%;
     background-color:$natural-85;
+    @include pad{
+        width: 4%;
+    }
 }
 
 .card-title{
@@ -44,6 +94,67 @@ img{
     padding: 12px 24px 12px 12px;
     position: absolute;
     bottom: 48px;
+    z-index: 1;
+}
+
+.choose-adv{
+    top:-184px ;
+}
+
+.zindex-1{
+    z-index: 1;
+}
+
+.partner{
+    background-image: url('https://github.com/hexschool/2022-web-layout-training/blob/main/2025-week6/index/gradient-ball.png?raw=true');
+    background-size: 750px;
+    background-repeat: no-repeat;
+    background-position-x: 110%;
+    background-position-y: 180px;
+    @include pad{
+        background-size: contain;
+        background-position-x: 120px;
+        background-position-y: 120%;
+    }
+}
+
+.team-adv{
+    max-width: 636px;
+    border-radius: 12px;
+    @include pad{
+        max-width: 100%;
+    }
+}
+
+.width-fit-content{
+    width: fit-content;
+}
+
+.w-160{
+    width: 160px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fs-14{
+    font-size: 14px;
+}
+
+.QA-bg{
+    background-image: url('https://github.com/hexschool/2022-web-layout-training/blob/main/2025-week6/index/bg-grid.png?raw=true');
+
+}
+
+.accordion-button:focus{
+    box-shadow: none;
+}
+
+.acc-border-radius{
+    border-radius: 12px 12px 0 0 ;
+}
+
+.reserve-top{
+  border-bottom: 1px dotted white;
 }
 
 .h706{

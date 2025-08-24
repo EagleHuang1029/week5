@@ -1,21 +1,35 @@
+@mixin pad{
+  @media(max-width: 768px){
+	@content;
+  }
+}
+
+
+
+
+
 footer{
   background: #F0F3F5;
   padding-top: 48px;
   padding-bottom: 48px;
   border-top: 1px solid #D1D9E1;
-
-  .container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  @include pad{
+    padding-top: 24px;
+    padding-bottom: 24px;
   }
+  // .container{
+  //   display: flex;
+  //   justify-content: space-between;
+  //   align-items: center;
+  // }
   .navBar{
-    display: flex;
-
     a{
       padding: 8px 24px;
       &:hover{
         color: #4A69E8;
+      }
+      @include pad{
+        padding: 8px 16px;
       }
     }
   }
@@ -24,5 +38,9 @@ footer{
     color: #667F99;
     font-weight: 400;
     font-size: 14px;
+    text-align: right;
+    @include pad{
+      text-align: center;
+    }
   }
 }

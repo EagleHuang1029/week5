@@ -72,6 +72,12 @@ h2{
   padding-left: 24px;
 }
 
+.mb-w{
+  @include pad{
+    width: 90%;
+  }
+}
+
 .menu{
   display: flex;
   
